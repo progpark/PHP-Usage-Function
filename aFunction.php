@@ -20,14 +20,14 @@
 function arraySort($originalArray, $sort = 'desc', $sortKey = '', $sortType = false, $sortIndex = false) {
 
     if (!is_array($originalArray)) {
-    	  return $originalArray;
+    	return $originalArray;
     }
 
     $sort = strtolower($sort);
     $keysValue = $newArray = array();
 
     if ($sortType) {
-    	  $sortKey = '';
+    	$sortKey = '';
         $prefix = 'k';
     } else {
         $prefix = 'a';
@@ -54,14 +54,14 @@ function arraySort($originalArray, $sort = 'desc', $sortKey = '', $sortType = fa
             }
         }
     } else {
-    	  foreach ($originalArray as $key => $value) {
-    		    $sortFunction($originalArray[$key]);
-    	  }
-    	  $sortFunction($originalArray);
-    	  $newArray = $originalArray;
+    	foreach ($originalArray as $key => $value) {
+            $sortFunction($originalArray[$key]);
+    	}
+    	$sortFunction($originalArray);
+    	$newArray = $originalArray;
     }
 
-	  return $newArray;
+    return $newArray;
 }
 
 /**
@@ -73,13 +73,13 @@ function arraySort($originalArray, $sort = 'desc', $sortKey = '', $sortType = fa
  */
 function arrayUnique($originalArray) {
 
-	  $arrTemp = array();
+    $arrTemp = array();
 
-	  foreach ($originalArray as $key => $value) {
-		    if (!in_array($value, $arrTemp)) {
-			      array_push($arrTemp, $value);
-		    }
-	  }
+    foreach ($originalArray as $key => $value) {
+        if (!in_array($value, $arrTemp)) {
+            array_push($arrTemp, $value);
+        }
+    }
 
-	  return $arrTemp;
+    return $arrTemp;
 }
